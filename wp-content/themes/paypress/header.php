@@ -24,7 +24,7 @@
 	<?php wp_head(); // необходимо для работы плагинов и функционала ?>
 </head>
 <body <?php body_class(); // все классы для body ?>>
-	<header class="dfgh">
+	<header>
 		<?php $args = array( // опции для вывода верхнего меню, чтобы они работали, меню должно быть создано в админке
 			'theme_location' => 'top', // идентификатор меню, определен в register_nav_menus() в function.php
 			'container'=> 'nav', // обертка списка
