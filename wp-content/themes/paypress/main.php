@@ -16,7 +16,7 @@
 		<div class="row">
 			<div class="col-md-4">
 				<h2>WP Plugins:</h2>
-				<p>Duplicator</p>
+				<p>GITHUB</p>
 				<p>Contact Form 7</p>
 				<p>Insert PHP</p>
 				<p>HTML Editor Syntax Highlighter</p> 
