@@ -1,0 +1,130 @@
+section {
+	min-height: calc(100vh - 113px); 
+}
+.page-id-11 section {
+	min-height: calc(100vh - 103px); 
+	.contacts {
+		margin-top: 20px;
+		font-size: 16px; 
+	}
+}
+.page-id-39 { 
+	section {
+		min-height: calc(100vh - 113px); 
+	}
+	.menu-item-profile {
+		text-decoration: underline; 
+	}
+}
+.menu-main-container {
+	padding-top: 10px;
+	padding-bottom: 10px; 
+	position: absolute;
+	right: 5vw;
+	ul {
+		text-align: center;
+		margin-bottom: 0px;
+		display: inline-block;
+		li {
+			list-style-type: none; 
+			float: left;
+			margin-left: 15px;
+			margin-right: 15px; 
+			a {
+			text-transform: uppercase; 
+			font-size: 18px; 
+			color: #fff; 
+			}
+		}
+		.current-menu-item {
+			text-decoration: underline; 
+		}
+	}
+}
+.btn-orange {
+	background-color: orangered;
+	border-color: orange;
+	font-weight: bold !important; 
+	&:hover {
+		background-color: #CA4616; 
+	}
+}
+.btn-primary {
+	margin-top: 10px;
+}
+.mt20 {
+	margin-top: 20px; 
+}
+.line-through {
+	text-decoration: line-through;
+}
+.usersection {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background-color: cadetblue;
+	#signinbutton {
+		margin-top: 0 !important;
+		margin-left: 15px;
+	}
+}
+footer {
+	text-align: center;
+	background-color: #1F3738;
+	padding-bottom: 10px;
+	padding-top: 10px; 
+	p {
+		margin-bottom: 0px; 
+		color: white; 
+		a {
+			
+		}
+	}
+} 
+ 
+.page-id-44 footer {
+	display:none;
+}
+ 
+#landingpage {
+	background-image: url('/images/landingbg.jpg');	
+    background-size: cover;
+    background-position: center center;	
+	padding: 10vh;
+	.slogantop {
+		font: 36px Arial, Helvetica, sans-serif; 
+		color: #fff;
+		text-transform: uppercase;
+	}
+	.mainlogo {
+		margin-top: 5vh;
+		margin-bottom: 5vh;
+	}
+	.btnblock {
+		margin-top: 50px;				
+		.regbtn {
+			width: 300px;
+			background-color: #ff3c00;
+			border-radius: 4px;
+			padding-top:15px; 
+			padding-bottom:15px;
+			margin-bottom: 20px;
+			font: 18px Arial, Helvetica, sans-serif; 
+			color: #fff;
+			text-transform: uppercase;			
+		}	
+		.vkbtn {
+			background-color: #4b77a2;	
+		}
+		.fbbtn {
+			background-color: #3b5998;
+		}
+	}
+	.hero {
+		color: #fff;
+		font: 22px Arial, Helvetica, sans-serif;		
+	}
+}
+
+.modal-backdrop {
+	background-color: #fff !important;
+}
