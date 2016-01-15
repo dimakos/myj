@@ -1,26 +1,28 @@
 <noindex>
 <div id="landingpage">
 	<center>
-	<div class="slogantop">Виникли проблеми по дому,<br>хочеш розпочати ремонт, але<br>не знаеш де знайти гідного майстра?</div>
+	<div class="slogantop">Возникли проблемы по дому,<br>хочешь начать ремонт, но<br>не знаешь где найти хорошего мастера?</div>
 	<img class="mainlogo" src="/images/mainlogo.png">
-	<div class="slogantop">Ми об’єднуємо вас<br>та ваших домашніх майстрів</div>
+	<div class="slogantop">Социальная сеть, которая объединяет вас<br>и ваших домашних мастеров</div>
 	<div class="btnblock">
 
-		<button type="button" class="regbtn btn" data-toggle="modal" data-target="#myModal">Зареєструватися</button>
+		<button type="button" class="regbtn btn" data-toggle="modal" data-target="#myModal">Зарегистрироваться</button>
 	 
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
 			<div class="modal-content">
 			  <div class="modal-header">
+				<img src="/images/logosmall2.png">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Registration</h4>
+				<h4 class="modal-title" id="myModalLabel">Регистрация</h4>
 			  </div>
 			  <form action="/profile?from=registration" method="post">
 				<div class="modal-body">
 				  <div class="form-group">
-					<label for="Email">Email address</label>
+					<label for="Email">Напишите ваш Email</label>
 					<input type="email" class="form-control" name="email" placeholder="Email">
-				    <input type="submit" class="btn btn-primary" value="Create account">
+					<img src="/images/forreg.jpg"><br>
+				    <input type="submit" class="regbtn btn" value="Зарегистрироваться">
 				  </div>
 				</div>
 			  </form>
@@ -32,17 +34,18 @@
 		  <div class="modal-dialog" role="document">
 			<div class="modal-content">
 			  <div class="modal-header">
+			    <img src="/images/logosmall2.png">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel2">Sign in</h4>
+				<h4 class="modal-title" id="myModalLabel2">Увійти</h4>
 			  </div>
 			  <form action="/profile?from=signin" method="post">
 				<div class="modal-body">
 				  <div class="form-group">
-					<label for="Email">Email address</label>
+					<!--<label for="Email">Email address</label>-->
 					<input type="email" class="form-control" name="email" placeholder="Email">
-				    <label for="Password">Password</label>
+				    <!--<label for="Password">Password</label>-->
 					<input type="password" class="form-control" name="password" placeholder="Password">
-					<input type="submit" class="btn btn-primary" value="Sign in">
+					<input type="submit" class="regbtn btn" value="Увійти">
 				  </div>
 				</div>
 			  </form>
