@@ -125,4 +125,46 @@ echo(date('d ', strtotime( $registered )) . $monthes[(date('n', strtotime( $regi
 add_shortcode('membersince', 'wpb_user_registration_date');
 
 show_admin_bar( false );
+
+
+function mb_profile_menu_tabs(){
+global $bp;
+$bp->bp_nav['notifications']['position'] = 50;
+$bp->bp_nav['messages']['position'] = 30;
+$bp->bp_nav['activity'] = false;
+$bp->bp_nav['groups'] = false;
+$bp->bp_nav['settings'] = false;
+$bp->bp_nav['followers'] = false;
+$bp->bp_nav['friends'] = false;
+$bp->bp_nav['following']['name'] = 'Избранное';
+$bp->bp_nav['profile']['public']['name'] = 'Избранное';
+$bp->bp_options_nav['profile']['change-avatar']['name'] = 'Изменить аватар';
+$bp->bp_options_nav['profile']['public']['name'] = 'Личные данные'; 
+bp_core_remove_subnav_item( 'profile', 'edit' ); 
+bp_core_new_nav_item(
+	array(
+        'name' => 'Стать мастером',
+        'slug' => 'master', 
+        'position' => 100, 
+        'default_subnav_slug' => 'published', // We add this submenu item below 
+        'screen_function' => 'mb_author_posts'
+	)
+);
+}
+add_action('bp_setup_nav', 'mb_profile_menu_tabs', 201);
+
+function mb_author_posts(){	
+	add_action( 'bp_template_content', 'mb_show_posts' );
+	bp_core_load_template( apply_filters( 'bp_core_template_plugin', 'members/single/plugins' ) );
+}
+function mb_show_posts() {
+	echo 'Станьте мастером';
+}
+
+add_filter('excerpt_more', 'new_excerpt_more');
+function new_excerpt_more($more) {
+	global $post;
+	return '<a href="'. get_permalink($post->ID) . '">&nbsp;Читать дальше</a>';
+}
+
 ?>

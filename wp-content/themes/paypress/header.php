@@ -16,6 +16,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); // абсолютный путь до темы ?>/style.css">
 	<link rel="stylesheet" type="text/css" href="http://sources.sites.org.ua/bootstrap/bootstrap.css" />
+	
 	<!--<link rel="stylesheet" type="text/css" href="<?php /*echo get_template_directory_uri(); // абсолютный путь до темы*/ ?>/font-awesome/css/font-awesome.css" />--> 
 	 <!--[if lt IE 9]>
 	 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -26,7 +27,13 @@
 <body <?php body_class(); // все классы для body ?>>
 	<header>
 		<div class="header-line">
-			<a href="http://myj.sites.org.ua/"><img class="logosmall" src="/images/logosmall.png" alt="mujnachas"></a>	
+			<!--<a href="http://myj.sites.org.ua/"><img class="logosmall" src="/images/logosmall.png" alt="mujnachas"></a>-->
+			<div class="homelogo">
+				<a class="homelink" href="#">
+					<span class="homelink-btn">Домой</span>
+				</a>
+			</div>
+			
 				<?php
 				 $args = array( // опции для вывода верхнего меню, чтобы они работали, меню должно быть создано в админке
 					'theme_location' => 'top', // идентификатор меню, определен в register_nav_menus() в function.php
@@ -35,8 +42,14 @@
 					'menu_id' => 'bottom-nav', // id для ul
 					);
 					wp_nav_menu($args); // выводим верхнее меню ?>
-				<?php if ( is_user_logged_in() ) { ?>
-					<script>jQuery("#bottom-nav").append('<li id="menu-item-profile" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-profile"><a href="/profile/">Profile</a></li>');</script>
+				<?php if ( is_user_logged_in() ) { 
+					$current_user = wp_get_current_user(); 
+					$user_login = $current_user->user_login; 
+					$backuser_name = str_replace('@' , '' , $user_login); 
+					$backuser_name = str_replace('.' , '-' , $backuser_name);
+					?>
+					<script>jQuery("#bottom-nav").append('<li id="menu-item-profile" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-profile"><a href="/users/<?php echo $backuser_name; ?>/profile">Профиль</a></li>');</script>
+					<script>jQuery("#bottom-nav").append('<li id="menu-item-exit" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-exit"><a href="<?php echo wp_logout_url('/'); ?>">Выйти</a></li>');</script>	
 				<?php }
 				else {?>
 					<script>jQuery("#bottom-nav").append('<li id="menu-item-registration" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-registration"><a href="#" data-toggle="modal" data-target="#registrationmodal">Регистрация</a></li>');</script>
@@ -58,7 +71,7 @@
 				<h4 class="modal-title" id="myModalLabel2">Войти</h4>
 			  </div>			  
 				<div class="modal-body">
-					<form action="/profile?from=signin" method="post">
+					<form action="/handler?from=signin" method="post">
 					  <div class="form-group">
 						<!--<label for="Email">Email address</label>-->
 						<input type="email" class="form-control" name="email" placeholder="Email">
@@ -83,7 +96,7 @@
 			  </div>
 			  
 			  <div class="modal-body">
-				<form action="/profile?from=registration" method="post">
+				<form action="/handler?from=registration" method="post">
 				  <div class="form-group">
 					<label for="Email">Напишите ваш Email</label>
 					<input type="email" class="form-control" name="email" placeholder="Email">
